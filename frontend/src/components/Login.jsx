@@ -17,7 +17,7 @@ function Login() {
     try {
 
       const response = await axios.post(
-  "https://store-rating-h4lp.onrender.com/api/auth/login",
+        "https://store-rating-h4lp.onrender.com/api/auth/login",
         {
           email,
           password
@@ -43,6 +43,8 @@ function Login() {
         navigate("/user")
       }
 
+      toast.success("Login Successful")
+
     } catch (error) {
 
       console.log(error)
@@ -55,41 +57,71 @@ function Login() {
 
   return (
 
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 px-4">
 
-      <form
-        onSubmit={handleLogin}
-        className="bg-white p-8 rounded-2xl shadow-xl w-[350px] flex flex-col gap-4"
-      >
+      <div className="bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl rounded-3xl p-10 w-full max-w-md text-white">
 
-        <h1 className="text-3xl font-bold text-center mb-4">
-          Login
-        </h1>
+        <div className="text-center mb-8">
 
-        <input
-          type="email"
-          placeholder="Enter Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="border p-3 rounded-lg"
-        />
+          <h1 className="text-4xl font-bold mb-2">
+            Store Rating App
+          </h1>
 
-        <input
-          type="password"
-          placeholder="Enter Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="border p-3 rounded-lg"
-        />
+          <p className="text-gray-200 text-sm">
+            Login to manage stores and ratings
+          </p>
 
-        <button
-          type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-lg"
+        </div>
+
+        <form
+          onSubmit={handleLogin}
+          className="flex flex-col gap-5"
         >
-          Login
-        </button>
 
-      </form>
+          <div>
+            <label className="block mb-2 text-sm font-medium">
+              Email
+            </label>
+
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full p-3 rounded-xl bg-white/20 border border-white/30 outline-none placeholder-gray-200 focus:ring-2 focus:ring-white"
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block mb-2 text-sm font-medium">
+              Password
+            </label>
+
+            <input
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-3 rounded-xl bg-white/20 border border-white/30 outline-none placeholder-gray-200 focus:ring-2 focus:ring-white"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="bg-white text-indigo-700 font-semibold py-3 rounded-xl hover:bg-gray-100 transition duration-300 shadow-lg"
+          >
+            Login
+          </button>
+
+        </form>
+
+        <div className="mt-8 text-center text-sm text-gray-200">
+          Developed by Priyanshu Ahir
+        </div>
+
+      </div>
 
     </div>
 
