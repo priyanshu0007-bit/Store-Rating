@@ -21,7 +21,7 @@ function AdminDashboard() {
       const token = localStorage.getItem("token")
 
       const response = await axios.get(
-        "http://localhost:5000/api/admin/users",
+        "https://store-rating-h4lp.onrender.com/api/admin/users",
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -46,7 +46,7 @@ function AdminDashboard() {
       const token = localStorage.getItem("token")
 
       const response = await axios.get(
-        "http://localhost:5000/api/stores/all",
+        "https://store-rating-h4lp.onrender.com/api/stores/all",
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -80,7 +80,7 @@ function AdminDashboard() {
       const token = localStorage.getItem("token")
 
       await axios.post(
-        "http://localhost:5000/api/stores/add",
+        "https://store-rating-h4lp.onrender.com/api/stores/add",
         {
           name,
           email,
@@ -120,7 +120,7 @@ function AdminDashboard() {
       const token = localStorage.getItem("token")
 
       await axios.delete(
-        `http://localhost:5000/api/stores/delete/${id}`,
+        `https://store-rating-h4lp.onrender.com/api/stores/delete/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`

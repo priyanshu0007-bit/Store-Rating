@@ -14,7 +14,7 @@ function OwnerDashboard() {
       const token = localStorage.getItem("token")
 
       const response = await axios.get(
-        "http://localhost:5000/api/stores/owner-dashboard",
+        "https://store-rating-h4lp.onrender.com/api/stores/owner-dashboard",
         {
           headers: {
             Authorization: `Bearer ${token}`

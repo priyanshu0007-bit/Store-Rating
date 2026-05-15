@@ -16,7 +16,7 @@ function UserDashboard() {
       const token = localStorage.getItem("token")
 
       const response = await axios.get(
-        "http://localhost:5000/api/stores/all",
+        "https://store-rating-h4lp.onrender.com/api/stores/all",
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -114,7 +114,7 @@ function UserDashboard() {
                     const token = localStorage.getItem("token")
 
                     await axios.post(
-                      "http://localhost:5000/api/ratings/submit",
+                      "https://store-rating-h4lp.onrender.com/api/ratings/submit",
                       {
                         storeId: store.id,
                         rating: Number(e.target.value)
