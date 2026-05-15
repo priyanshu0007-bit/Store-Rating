@@ -17,7 +17,7 @@ function Login() {
     try {
 
       const response = await axios.post(
-        "https://store-rating-h4lp.onrender.com",
+  "https://store-rating-h4lp.onrender.com/api/auth/login",
         {
           email,
           password
